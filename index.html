@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Schedule Instagram Post</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<h1>Schedule Instagram Post</h1>
+	<form id="schedule-form" method="POST" action="/upload" enctype="multipart/form-data">
+		<label for="media-file">Media File:</label>
+		<input type="file" id="media-file" name="mediaFile" required>
+
+		<label for="caption">Caption:</label>
+		<textarea id="caption" name="caption" rows="5" required></textarea>
+
+		<label for="schedule-time">Schedule Time:</label>
+		<input type="datetime-local" id="schedule-time" name="scheduleTime" required>
+
+		<button type="submit" class="btn">Schedule Post</button>
+	</form>
+    <script src="js/index.js"></script>
+</body>
+</html>

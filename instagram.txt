@@ -1,0 +1,22 @@
+You are correct, in the first method, there is no time parameter to schedule the post. This method only allows you to upload the media and add a caption to it. To schedule the post, you would need to use the second method, POST /{ig-user-id}/media_publish, which allows you to specify the time when you want the post to be published.
+
+Here's an updated overview of the data you would need to send:
+
+POST /{ig-user-id}/media
+
+Endpoint: POST /{ig-user-id}/media
+HTTP Method: POST
+Parameters:
+image_url: The URL of the image or video file to be posted.
+caption: The text to be included as the post's caption.
+Response: A JSON object containing the media ID of the newly created media object.
+POST /{ig-user-id}/media_publish
+
+Endpoint: POST /{ig-user-id}/media_publish
+HTTP Method: POST
+Parameters:
+creation_id: The media ID of the newly created media object from the previous step.
+caption: The text to be included as the post's caption.
+scheduled_publish_time: The timestamp of when you want your post to be published. This must be in ISO-8601 format, such as 2022-03-15T12:00:00-0700.
+Response: A JSON object containing the media ID and status of the newly scheduled post.
+So to schedule a post using the Instagram API, you would first use the POST /{ig-user-id}/media endpoint to upload the media and add the caption, and then use the POST /{ig-user-id}/media_publish endpoint to schedule the post with the desired time.
